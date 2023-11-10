@@ -1,12 +1,16 @@
 import React from 'react';
 
+
 type Props = {};
 
 const About = (props: Props) => {
   return (
     <>
-      <div className="h-[72px]"></div>
-      <div className="w-full h-[300px] bg-slate-200">About</div>
+      <div id="aboutme"></div>
+      <div className="w-full pt-[72px] h-[500px] bg-slate-200">About
+      
+
+      </div>
     </>
   );
 };

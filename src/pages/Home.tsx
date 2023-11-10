@@ -10,6 +10,7 @@ import Career from '../components/Career';
 type Props = {};
 
 const Home = (props: Props) => {
+  
   return (
     <>
       <Header />
@@ -18,7 +19,7 @@ const Home = (props: Props) => {
       <Archiving />
       <Projects />
       <Career />
-      
+
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">hi</button>
       <Footer />
     </>
