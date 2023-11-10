@@ -1,16 +1,17 @@
-import React, {useState, useEffect, CSSProperties} from 'react';
+import React, { useState, useEffect, CSSProperties } from 'react';
+import { scrollToSection } from '../utils/scrollUtils';
+import { scrollToTop } from '../utils/scrollUtils';
 
 type Props = {};
 
-const navItem = ['AboutMe', 'Skills', 'Archiving', 'Projects', 'Career'];
+const navItem = ['About-Me', 'Skills', 'Archiving', 'Projects'];
 
 const Header = (props: Props) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [showBackground, setShowBackground] = useState(false);
 
   const handleScroll = () => {
     const position = window.scrollY;
-    setScrollPosition(position);
+
     if (position > 100) {
       setShowBackground(true);
     } else {
@@ -28,40 +29,36 @@ const Header = (props: Props) => {
   }, []);
 
   const headerStyle: CSSProperties = {
-    color: 'gray'
+    color: 'white',
+    transition: 'all 0.3s'
   };
 
   if (showBackground) {
-    headerStyle.backgroundColor = 'skyblue';
+    headerStyle.backgroundColor = 'white';
+    headerStyle.color = 'black';
   }
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView();
-      window.scrollTo(0, window.scrollY - 72);
-    }
-  };
-
   return (
-    <header style={headerStyle} className="bg-transparent p-4 fixed top-0 left-0 w-full z-50">
+    <header id="header" style={headerStyle} className="bg-transparent p-4 fixed top-0 left-0 w-full z-50">
       <nav className="container mx-auto flex items-center justify-between">
-        <div className="text-white text-2xl font-bold">My Logo</div>
+        <div className={`text-2xl font-bold`}>
+          <button onClick={scrollToTop}>My Portfolio</button>
+        </div>
+
         <ul className="flex space-x-4">
           {navItem.map((item) => {
             return (
               <li key={item}>
-                <a
+                <button
                   onClick={() => scrollToSection(`${item.toLowerCase()}`)}
-                  className="text-white hover:text-blue-400 hover:underline font-bold transition-colors duration-300"
+                  className="hover:text-blue-400 hover:underline font-bold  cursor-pointer"
                 >
-                  {item}
-                </a>
+                  {item.replace('-', '')}
+                </button>
               </li>
             );
           })}
         </ul>
-        <button className="bg-white text-blue-500 px-4 py-2 rounded-full hover:bg-blue-100">Log In</button>
       </nav>
     </header>
   );

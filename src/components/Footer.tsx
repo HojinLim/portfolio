@@ -1,23 +1,26 @@
 import React from 'react';
+import { AiFillGithub, AiOutlineInstagram, AiOutlineFacebook } from 'react-icons/ai';
+import { SiTistory } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white p-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <div>
-          <p>&copy; 2023 My Website</p>
+    <footer className="bg-gray-900 text-white p-4 h-[200px]">
+      <div className="container mx-auto my-10 flex flex-col items-center justify-center">
+        <div className="flex space-x-4 my-3">
+          <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
+            <AiFillGithub className="w-[50px] h-[50px] footerIcon mx-1" />
+          </a>
+          <a href="https://your-tistory-url" target="_blank" rel="noopener noreferrer">
+            <SiTistory className="w-[40px] h-[40px] footerIcon mt-2  mx-1" />
+          </a>
+          <a href="https://your-instagram-url" target="_blank" rel="noopener noreferrer">
+            <AiOutlineInstagram className="w-[60px] h-[60px] footerIcon  mx-1" />
+          </a>
+          <a href="https://your-facebook-url" target="_blank" rel="noopener noreferrer">
+            <AiOutlineFacebook className="w-[60px] h-[60px] footerIcon " />
+          </a>
         </div>
-        <div>
-          <a href="1" className="text-blue-400 hover:text-blue-600 mx-2">
-            Privacy Policy
-          </a>
-          <a href="2" className="text-blue-400 hover:text-blue-600 mx-2">
-            Terms of Service
-          </a>
-          <a href="3" className="text-blue-400 hover:text-blue-600 mx-2">
-            Contact Us
-          </a>
-        </div>
+        <p>© 2021. Hong Gil Dong. All rights reserved.</p>
       </div>
     </footer>
   );
