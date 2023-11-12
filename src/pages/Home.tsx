@@ -28,7 +28,7 @@ const Home = (props: Props) => {
     const createFadeOutDiv = (x: number, y: number, speed: number) => {
       const newFadeOutDiv = {
         id: Math.random() + x + y + speed,
-        size: Math.min(8, 8 + speed / 5),
+        size: Math.min(6, 6 + speed / 3),
         x,
         y
       };
@@ -58,10 +58,16 @@ const Home = (props: Props) => {
       <ScrollToTopButton />
       <Footer />
       {mouseEffects &&
-        mouseEffects.map((div) => {
+        mouseEffects.map((effect) => {
           return (
-            <React.Fragment key={div.id}>
-              <MouseEffect id={div.id} mouseX={div.x} mouseY={div.y} size={div.size} deleteFn={deleteEffect} />
+            <React.Fragment key={effect.id}>
+              <MouseEffect
+                id={effect.id}
+                mouseX={effect.x}
+                mouseY={effect.y}
+                size={effect.size}
+                deleteFn={deleteEffect}
+              />
             </React.Fragment>
           );
         })}
