@@ -28,7 +28,7 @@ const Home = (props: Props) => {
     const createFadeOutDiv = (x: number, y: number, speed: number) => {
       const newFadeOutDiv = {
         id: Math.random() + x + y + speed,
-        size: Math.min(6, 6 + speed / 3),
+        size: Math.min(14, 7 + speed / 3),
         x,
         y
       };
