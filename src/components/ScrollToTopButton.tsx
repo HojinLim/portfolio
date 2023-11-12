@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ArrowUp from '../static/images/arrow-up.svg';
 import { scrollToTop } from '../utils/scrollUtils';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const arrowRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     // 스크롤 이벤트를 추가하여 버튼 표시 여부를 업데이트
@@ -23,15 +24,32 @@ const ScrollToTopButton = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  
-
+  const transArrow = (action: string) => {
+    if (arrowRef.current instanceof HTMLImageElement) {
+      if (action === 'in') {
+        arrowRef.current.style.transform = 'translateY(-2px) scale(1.1)';
+      } else {
+        arrowRef.current.style.transform = 'none';
+      }
+    }
+  };
   return (
     <button
-      className={`fixed bottom-20 right-20 p-2 rounded-full cursor-pointer ${isVisible ? 'block' : 'hidden'}`}
+      className={`fixed w-10 h-10 bottom-20 right-20 p-2 shadow-md shadow-white rounded-full cursor-pointer ${
+        isVisible ? 'block' : 'hidden'
+      } hover:shadow-black hover:bg-white transition-all duration-75`}
       onClick={scrollToTop}
+      onMouseEnter={() => transArrow('in')}
+      onMouseLeave={() => transArrow('out')}
     >
-      <img src={ArrowUp} alt="" width={40} height={40} style={{ opacity: 0.7 }} />
+      <img
+        ref={arrowRef}
+        src={ArrowUp}
+        alt=""
+        width={24}
+        height={24}
+        className="opacity-70 transition-all duration-300"
+      />
     </button>
   );
 };
