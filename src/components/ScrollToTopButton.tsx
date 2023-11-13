@@ -37,7 +37,7 @@ const ScrollToTopButton = () => {
     <button
       className={`fixed w-10 h-10 bottom-20 right-20 p-2 shadow-md shadow-white rounded-full cursor-pointer ${
         isVisible ? 'block' : 'hidden'
-      } hover:shadow-black hover:bg-white transition-all duration-75`}
+      } hover:shadow-black hover:shadow-inner hover:bg-white transition-all duration-75 ease`}
       onClick={scrollToTop}
       onMouseEnter={() => transArrow('in')}
       onMouseLeave={() => transArrow('out')}

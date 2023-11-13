@@ -12,7 +12,20 @@ import MouseEffect from '../components/MouseEffect';
 type Props = {};
 
 const Home = (props: Props) => {
-  const [mouseEffects, setMouseEffects] = useState<{ id: number; size: number; x: number; y: number }[]>([]);
+  const [mouseEffects, setMouseEffects] = useState<Map<number, { id: number; size: number; x: number; y: number }>>(
+    new Map()
+  );
+
+  const deleteEffect = (id: number) => {
+    setMouseEffects((state) => {
+      state.delete(id);
+      return state;
+    });
+  };
+  // const deleteEffect = (id: number) => {
+  //   setMouseEffects((state) => state.filter((effect) => effect.id !== id));
+  // };
+
   useEffect(() => {
     const handleMousemove = (event: MouseEvent) => {
       const scrollX = window.scrollX;
@@ -33,18 +46,18 @@ const Home = (props: Props) => {
         y
       };
 
-      setMouseEffects((state) => [...state, newFadeOutDiv]);
+      // setMouseEffects((state) => [...state, newFadeOutDiv]);
+      setMouseEffects((state) => state.set(newFadeOutDiv.id, newFadeOutDiv));
     };
 
     document.addEventListener('mousemove', handleMousemove);
+    document.addEventListener('click', handleMousemove);
 
     return () => {
       document.removeEventListener('mousemove', handleMousemove);
+      document.removeEventListener('click', handleMousemove);
     };
   }, []);
-  const deleteEffect = (id: number) => {
-    setMouseEffects((state) => state.filter((effect) => effect.id !== id));
-  };
   return (
     <>
       <Header />
@@ -57,17 +70,11 @@ const Home = (props: Props) => {
 
       <ScrollToTopButton />
       <Footer />
-      {mouseEffects &&
-        mouseEffects.map((effect) => {
+      {Array(...mouseEffects) &&
+        Array(...mouseEffects).map(([id, info]) => {
           return (
-            <React.Fragment key={effect.id}>
-              <MouseEffect
-                id={effect.id}
-                mouseX={effect.x}
-                mouseY={effect.y}
-                size={effect.size}
-                deleteFn={deleteEffect}
-              />
+            <React.Fragment key={id}>
+              <MouseEffect id={id} mouseX={info.x} mouseY={info.y} size={info.size} deleteFn={deleteEffect} />
             </React.Fragment>
           );
         })}

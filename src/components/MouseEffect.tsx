@@ -8,7 +8,7 @@ type Props = {
   size: number;
 };
 
-const delay = 500;
+const delay = 850;
 
 const MouseEffect = ({ id, mouseX, mouseY, size, deleteFn }: Props) => {
   const self = useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ const MouseEffect = ({ id, mouseX, mouseY, size, deleteFn }: Props) => {
 
         self.current.style.boxShadow = `0 0 2px 1px rgba(${randomR},${randomG},${randomB},${(randomA + 1) / 1.5})`;
 
-        self.current.style.opacity = `${(randomA + 1) / 4}`;
+        self.current.style.opacity = `${(randomA + 1) / 3}`;
 
         self.current.style.backgroundColor = `rgba(${randomR},${randomG},${randomB},${(randomA + 1) / 2})`;
 
@@ -51,7 +51,9 @@ const MouseEffect = ({ id, mouseX, mouseY, size, deleteFn }: Props) => {
         backgroundColor: 'transparent',
         borderRadius: '50%',
         pointerEvents: 'none',
-        transition: `all ${delay / 1000 + 's'} ease`
+        transition: `all ${delay / 1000 + 's'} ease`,
+        filter: 'brightness(1.3)',
+        zIndex: '9999'
       }}
     ></div>
   );
