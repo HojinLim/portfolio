@@ -17,19 +17,19 @@ const Projects = (props: Props) => {
       <ArticleHeader name={'projects'} />
 
       <section
-        style={{ width: '1500px', height: '1200px' }}
+        style={{ width: '1500px'}}
         className="mx-auto flex flex-col flex-wrap content-around gap-8 justify-center"
       >
-        <div style={{ width: '100%', height: '100%' }} className="interactiveBox container mx-auto pl-8">
+        <div style={{ width: '100%' }} className="interactiveBox container mx-auto pl-8">
           <div className="text-5xl font-bold text-center mt-5">편의점 식신 (편식)</div>
           <div className="text-2xl font-bold text-gray-400 text-center mt-5"> 23.08.16 ~ 23.09.15 (4주 / 5주)</div>
           <div className="container flex flex-row mt-5">
-            <div style={{ height: '100vh', border: '1px solid black' }} className="w-1/2  bg-gray-300 p-4">
+            <div style={{ height: '50%', border: '1px solid black' }} className="w-1/2  bg-gray-300 p-4">
               <div style={{ marginTop: '20vh', padding: '30px' }}>
                 <ImageSlider images={images} />
               </div>
             </div>
-            <div style={{ height: '100vh', border: '1px solid black' }} className="w-1/2 bg-gray-300 p-4">
+            <div style={{  border: '1px solid black' }} className="w-1/2 bg-gray-300 p-4">
               <p className="text-lg font-bold my-20" id="info">
                 사용자들과 서로의 편의점 음식 소비 경험을 바탕으로 어떤 음식들의 조합이 맛있을지 공유하고 소통할 수 있는
                 웹 서비스입니다.
