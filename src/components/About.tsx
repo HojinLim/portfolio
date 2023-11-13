@@ -11,7 +11,7 @@ type Props = {};
 
 const About = (props: Props) => {
   const information = [
-    { title: '이름', value: '홍길동', icon: person },
+    { title: '이름', value: '임호진', icon: person },
     { title: '생년월일', value: '1999.09.09', icon: calender },
     { title: '주소지', value: '대한민국', icon: locator },
     { title: '연락처', value: '000-0000-0000', icon: phoneCall },
