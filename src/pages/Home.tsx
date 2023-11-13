@@ -22,9 +22,6 @@ const Home = (props: Props) => {
       return state;
     });
   };
-  // const deleteEffect = (id: number) => {
-  //   setMouseEffects((state) => state.filter((effect) => effect.id !== id));
-  // };
 
   useEffect(() => {
     const handleMousemove = (event: MouseEvent) => {
@@ -46,7 +43,6 @@ const Home = (props: Props) => {
         y
       };
 
-      // setMouseEffects((state) => [...state, newFadeOutDiv]);
       setMouseEffects((state) => state.set(newFadeOutDiv.id, newFadeOutDiv));
     };
 
