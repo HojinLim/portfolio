@@ -9,14 +9,19 @@ import pen from '../static/images/pen.svg';
 
 type Props = {};
 
+// .env 파일에서 환경변수 가져오기
+const address: string | undefined = process.env.REACT_APP_INFO_ADDRESS;
+const phone: string | undefined = process.env.REACT_APP_INFO_PHONE;
+const univ: string | undefined = process.env.REACT_APP_INFO_UNIV;
+
 const About = (props: Props) => {
   const information = [
     { title: '이름', value: '임호진', icon: person },
-    { title: '생년월일', value: '1999.09.09', icon: calender },
-    { title: '주소지', value: '대한민국', icon: locator },
-    { title: '연락처', value: '000-0000-0000', icon: phoneCall },
-    { title: '이메일', value: 'hong@gil.dong', icon: mail },
-    { title: '학력', value: '학교', icon: pen }
+    { title: '생년월일', value: '1996.07.04', icon: calender },
+    { title: '주소지', value: address, icon: locator },
+    { title: '연락처', value: phone, icon: phoneCall },
+    { title: '이메일', value: 'hojinim@gmail.com', icon: mail },
+    { title: '학력', value: univ, icon: pen }
   ];
 
   return (
