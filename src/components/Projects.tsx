@@ -24,7 +24,7 @@ const Projects = (props: Props) => {
           <div className="text-5xl font-bold text-center mt-5">편의점 식신 (편식)</div>
           <div className="text-2xl font-bold text-gray-400 text-center mt-5"> 23.08.16 ~ 23.09.15 (4주 / 5주)</div>
           <div className="container flex flex-row mt-5">
-            <div style={{ height: '50%', border: '1px solid black' }} className="w-1/2  bg-gray-300 p-4">
+            <div style={{ border: '1px solid black' }} className="w-1/2  bg-gray-300 p-4">
               <div style={{ marginTop: '20vh', padding: '30px' }}>
                 <ImageSlider images={images} />
               </div>
