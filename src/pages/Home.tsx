@@ -18,8 +18,9 @@ const Home = (props: Props) => {
 
   const deleteEffect = (id: number) => {
     setMouseEffects((state) => {
-      state.delete(id);
-      return state;
+      const newState = new Map(state);
+      newState.delete(id);
+      return newState;
     });
   };
 
@@ -43,7 +44,11 @@ const Home = (props: Props) => {
         y
       };
 
-      setMouseEffects((state) => state.set(newFadeOutDiv.id, newFadeOutDiv));
+      setMouseEffects((state) => {
+        const newState = new Map(state);
+        newState.set(newFadeOutDiv.id, newFadeOutDiv);
+        return newState;
+      });
     };
 
     document.addEventListener('mousemove', handleMousemove);
@@ -66,8 +71,8 @@ const Home = (props: Props) => {
 
       <ScrollToTopButton />
       <Footer />
-      {Array(...mouseEffects) &&
-        Array(...mouseEffects).map(([id, info]) => {
+      {Array.from(mouseEffects) &&
+        Array.from(mouseEffects).map(([id, info]) => {
           return (
             <React.Fragment key={id}>
               <MouseEffect id={id} mouseX={info.x} mouseY={info.y} size={info.size} deleteFn={deleteEffect} />

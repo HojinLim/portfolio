@@ -39,6 +39,7 @@ const MouseEffect = ({ id, mouseX, mouseY, size, deleteFn }: Props) => {
       }, 50);
     }
   }, []);
+
   return (
     <div
       ref={self}
