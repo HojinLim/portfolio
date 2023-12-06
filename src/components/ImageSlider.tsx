@@ -17,13 +17,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // 화면 폭이 1024px 이하일 때 적용
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2
         }
       },
       {
-        breakpoint: 768, // 화면 폭이 768px 이하일 때 적용
+        breakpoint: 768,
         settings: {
           slidesToShow: 1
         }
@@ -32,13 +32,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div style={{ padding: '50px' }} key={index}>
-          <img style={{ height: '500px', width: '100%', padding: '10px' }} src={image} alt={`Slide ${index + 1}`} />
-        </div>
-      ))}
-    </Slider>
+    <div className="relative mt-8">
+      <Slider {...settings} className="mx-auto max-w-2xl p-2 py-6">
+        {images.map((image, index) => (
+          <div key={index} className="focus:outline-none">
+            <img src={image} alt={`Slide ${index + 1}`} className="w-full h-96 object-cover rounded-md" />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

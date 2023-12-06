@@ -8,6 +8,7 @@ import Archiving from '../components/Archiving';
 import Projects from '../components/Projects';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import MouseEffect from '../components/MouseEffect';
+import { projectsData } from '../static/const';
 
 type Props = {};
 
@@ -47,30 +48,32 @@ const Home = (props: Props) => {
   };
   return (
     <>
-      <Header />
+      <div>
+        <Header />
 
-      <Intro />
-      <About />
-      <Skills />
-      <Archiving />
-      <Projects />
+        <Intro />
+        <About />
+        <Skills />
+        <Archiving />
+        <Projects projects={projectsData} />
 
-      <ScrollToTopButton />
-      <Footer />
-      {mouseEffects &&
-        mouseEffects.map((effect) => {
-          return (
-            <React.Fragment key={effect.id}>
-              <MouseEffect
-                id={effect.id}
-                mouseX={effect.x}
-                mouseY={effect.y}
-                size={effect.size}
-                deleteFn={deleteEffect}
-              />
-            </React.Fragment>
-          );
-        })}
+        <ScrollToTopButton />
+        <Footer />
+        {mouseEffects &&
+          mouseEffects.map((effect) => {
+            return (
+              <React.Fragment key={effect.id}>
+                <MouseEffect
+                  id={effect.id}
+                  mouseX={effect.x}
+                  mouseY={effect.y}
+                  size={effect.size}
+                  deleteFn={deleteEffect}
+                />
+              </React.Fragment>
+            );
+          })}
+      </div>
     </>
   );
 };

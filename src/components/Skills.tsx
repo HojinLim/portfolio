@@ -5,64 +5,33 @@ import back from '../static/images/skills/back.png';
 import communication from '../static/images/skills/com.png';
 import mobile from '../static/images/skills/mobile.png';
 import version from '../static/images/skills/version.png';
-import { githubLink } from '../static/variable';
-import { useMediaQuery } from 'react-responsive';
 
 type Props = {};
 
 const Skills = (props: Props) => {
-  const imagesDir = '../static/images/skills/';
-  type images = string[];
-
   const skillContainers = [
-    { value: 'Frontend', imgUrl: front, height: 750, width: 300 },
-    { value: 'Backend', imgUrl: back, height: 500, width: 300 },
-    { value: 'Mobile App', imgUrl: mobile, height: 210, width: 280 },
-    { value: 'Version Control', imgUrl: version, height: 300, width: 300 },
-    { value: 'Communication', imgUrl: communication, height: 400, width: 300 }
+    { value: 'Frontend', imgUrl: front },
+    { value: 'Backend', imgUrl: back },
+    { value: 'Mobile App', imgUrl: mobile },
+    // { value: 'Communication', imgUrl: communication },
+    { value: 'Version Control', imgUrl: version }
   ];
-  const isNarrow = useMediaQuery({ query: '(max-width: 700px)' });
 
   return (
     <article id="skills" className="w-full py-10 bg-pink-300">
       <ArticleHeader name="skills" />
 
-      <section>
-        {!isNarrow ? (
-          <div style={{ height: '800px' }} className="w-4/5 mx-auto flex flex-col flex-wrap content-around gap-8">
-            {skillContainers.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ height: item.height, width: item.width, padding: '20px' }}
-                  className="interactiveBox"
-                >
-                  <div className="mx-auto font-bold text-yellow-600 text-3xl">{item.value}</div>
-                  <div className="w-full mx-auto h-[1px] bg-black my-5"></div>
-
-                  <img src={item.imgUrl} alt={item.value} />
-                </div>
-              );
-            })}
+      <section className="flex flex-wrap justify-center items-start">
+        {skillContainers.map((item, index) => (
+          <div
+            key={index}
+            className="p-8 m-4 bg-white rounded-xl shadow-lg hover:shadow-lg transition duration-300 ease-in-out transform hover:translate-y-1 w-72 sm:w-80 lg:w-96 flex flex-col items-center"
+          >
+            <div className="mx-auto font-bold text-yellow-600 text-3xl mb-4">{item.value}</div>
+            <div className="w-full h-1 bg-black my-5"></div>
+            <img src={item.imgUrl} alt={item.value} className="object-contain mb-4" />
           </div>
-        ) : (
-          <div style={{ height: '2500px' }} className="w-4/5 mx-auto flex flex-col content-around gap-8">
-            {skillContainers.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{ height: item.height, width: item.width, padding: '20px' }}
-                  className="interactiveBox"
-                >
-                  <div className="mx-auto font-bold text-yellow-600 text-3xl">{item.value}</div>
-                  <div className="w-full mx-auto h-[1px] bg-black my-5"></div>
-
-                  <img src={item.imgUrl} alt={item.value} />
-                </div>
-              );
-            })}
-          </div>
-        )}
+        ))}
       </section>
     </article>
   );
