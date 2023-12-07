@@ -9,6 +9,13 @@ import shop3 from '../static/images/projects/shop/p3.png';
 import shop4 from '../static/images/projects/shop/p4.png';
 import shop5 from '../static/images/projects/shop/p5.png';
 import shop6 from '../static/images/projects/shop/p6.png';
+
+import rn1 from '../static/images/projects/RN_shop/a1.png';
+import rn2 from '../static/images/projects/RN_shop/a2.png';
+import rn3 from '../static/images/projects/RN_shop/a3.png';
+import rn4 from '../static/images/projects/RN_shop/a4.png';
+import rn5 from '../static/images/projects/RN_shop/a5.png';
+
 import { Project } from './const/type';
 
 const tistoryLink = 'https://hojin96.tistory.com/';
@@ -45,10 +52,10 @@ export const projectsData: Project[] = [
   {
     title: 'HK Mall- (RN version)',
     date: '23.11.20 ~  (진행중)',
-    images: [shop1, shop2, shop3, shop4, shop5, shop6],
+    images: [rn1, rn2, rn3, rn4, rn5],
     description: `React로 만든 프로젝트를 다양한 플랫폼에서도 \n유연하게 기능하게 하기 위해 React Native로도 만들어보았습니다. `,
     features: null,
-    deploymentLink: 'https://hkmall-one.vercel.app/',
+
     githubLink: 'https://github.com/HojinLim/RN_Shopping',
     tech: 'TypeScript, React Native, Firebase, tanstack query',
     skills: [

@@ -35,10 +35,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   return (
     <div className="relative mt-8">
 
-        <Slider {...settings} className="mx-auto max-w-5xl p-2 py-6">
+        <Slider {...settings} className="mx-auto max-w-4xl p-2 py-6">
           {images.map((image, index) => (
             <div key={index} className="flex items-center justify-center focus:outline-none">
-              <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-contain rounded-md my-28" />
+              <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-contain rounded-full my-28" />
             </div>
           ))}
         </Slider>

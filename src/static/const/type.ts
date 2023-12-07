@@ -4,7 +4,7 @@ export interface Project {
   features?: string[] | null;
   description: string;
   images: string[];
-  deploymentLink: string;
+  deploymentLink?: string;
   githubLink: string;
   tech: string;
 //   frontendTech: string;

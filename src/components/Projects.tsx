@@ -89,24 +89,27 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ) : null}
 
           {/* 배포링크 */}
-          <ul className="list-disc m-3">
-            <li className="text-lg flex my-4 font-bold">
-              <div className="container flex mx-auto mt-4">
-                <AiOutlineCheck />
-                배포 링크
-                <ul className="list-disc pl-4 ml-3">
-                  <a
-                    className="hover:cursor-pointer underline text-blue-600"
-                    href={project.deploymentLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.deploymentLink}
-                  </a>
-                </ul>
-              </div>
-            </li>
-          </ul>
+          {project.deploymentLink ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  배포 링크
+                  <ul className="list-disc pl-4 ml-3">
+                    <a
+                      className="hover:cursor-pointer underline text-blue-600"
+                      href={project.deploymentLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.deploymentLink}
+                    </a>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
+
           {/* Github 링크 */}
           <ul className="list-disc m-3">
             <li className="text-lg flex my-4 font-bold">
