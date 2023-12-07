@@ -11,14 +11,13 @@ type Props = {
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="bg-white rounded-lg p-8 overflow-hidden my-5 mx-auto w-full lg:w-3/5">
+    <div className="bg-white rounded-lg p-8 overflow-hidden my-5 mx-auto w-4/5">
       <div className="text-5xl font-bold text-center mt-5 align-middle justify-center">{project.title}</div>
       <div className="text-2xl font-bold text-gray-400 text-center mt-5">{project.date}</div>
       <div className="container flex flex-col mt-5 md:flex-col">
-        <div className="md:w-full md:order-1 bg-gray-300 p-8 mb-5 md:mb-0">
-          <div className="border-black border-2">
-            <ImageSlider images={project.images} />
-          </div>
+        {/* 슬라이더 */}
+        <div className="md:w-full md:order-1 bg-gray-300 p-8 mb-5 md:mb-0 align-middle border-black border-2">
+          <ImageSlider images={project.images} />
         </div>
 
         <div className="md:w-full md:order-2 bg-gray-300 p-8">
@@ -97,7 +96,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   배포 링크
                   <ul className="list-disc pl-4 ml-3">
                     <a
-                      className="hover:cursor-pointer underline text-blue-600"
+                      className="hover:cursor-pointer underline text-blue-600 sm:si"
                       href={project.deploymentLink}
                       target="_blank"
                       rel="noopener noreferrer"
