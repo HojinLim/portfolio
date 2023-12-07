@@ -51,7 +51,8 @@ const MouseEffect = ({ id, mouseX, mouseY, size, deleteFn }: Props) => {
         backgroundColor: 'transparent',
         borderRadius: '50%',
         pointerEvents: 'none',
-        transition: `all ${delay / 1000 + 's'} ease`
+        transition: `all ${delay / 1000 + 's'} ease`,
+        filter: 'brightness(1.4)'
       }}
     ></div>
   );

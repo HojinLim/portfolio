@@ -26,12 +26,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="text-5xl font-bold text-center mt-5">{project.title}</div>
       <div className="text-2xl font-bold text-gray-400 text-center mt-5">{project.date}</div>
       <div className="container flex flex-col mt-5 md:flex-row">
-        <div className="md:w-full bg-gray-300 p-8">
+        {/* 표시 */}
+        <div className="md:w-full md:order-1 bg-gray-300 p-8 mb-5 md:mb-0">
           <div className="border-black border-2">
             <ImageSlider images={project.images} />
           </div>
         </div>
-        <div className="md:w-full bg-gray-300 p-8 mt-5 md:mt-0">
+        {/* 표시 */}
+        <div className="md:w-full md:order-2 bg-gray-300 p-8">
           <p className="text-lg font-bold my-4" id="info">
             {project.description}
           </p>
