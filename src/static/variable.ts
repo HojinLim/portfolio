@@ -40,7 +40,7 @@ export const projectsData: Project[] = [
     title: 'HK Mall',
     date: '23.11.20 ~ 23.12.05 (2주 / 3주)',
     images: [shop1, shop2, shop3, shop4, shop5, shop6],
-    description: `여러 가지 옷을 구매할 수 있는 쇼핑몰 사이트입니다.\n 2인에서 제작하였으며 서로 소통을 중시하였고 배우는 과정으로 만든 프로젝트입니다.`,
+    description: `여러 가지 옷을 구매할 수 있는 쇼핑몰 사이트입니다.\n 2인에서 제작한 소규모 프로젝트 입니다.`,
     features: null,
     deploymentLink: 'https://hkmall-one.vercel.app/',
     githubLink: 'https://github.com/CTDKSKM/hkmall',
