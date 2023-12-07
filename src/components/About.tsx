@@ -31,9 +31,9 @@ const About = (props: Props) => {
       <section className="flex flex-wrap w-3/5 mx-auto">
         {information.map((info) => {
           return (
-            <div key={info.title} className="flex justify-center sm:w-1/2 lg:w-1/3">
-              <div className="w-[300px] flex gap-5 my-5">
-                <div className="w-[50px]">
+            <div key={info.title} className="flex justify-center sm:w-1/2 lg:w-1/3 mx-auto">
+              <div className="w-[300px] flex gap-5 my-5 mx-auto">
+                <div className="w-[50px] mx-auto">
                   <img src={info.icon} alt={info.title} width="35" height="35" />
                 </div>
                 <div className="w-2/3 flex flex-col gap-2">
