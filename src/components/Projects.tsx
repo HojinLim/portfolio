@@ -3,18 +3,7 @@ import ArticleHeader from './ArticleHeader';
 import { AiOutlineCheck } from 'react-icons/ai';
 import ImageSlider from './ImageSlider';
 
-type Project = {
-  title: string;
-  date: string;
-  images: string[];
-  description: string;
-  features: string[];
-  deploymentLink: string;
-  githubLink: string;
-  frontendTech: string;
-  backendTech: string;
-  tasks: string[];
-};
+import { Project } from '../static/const/type';
 
 type Props = {
   projects: Project[];
@@ -22,37 +11,136 @@ type Props = {
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="bg-white rounded-lg p-8 overflow-hidden">
-      <div className="text-5xl font-bold text-center mt-5">{project.title}</div>
+    <div className="bg-white rounded-lg p-8 overflow-hidden my-5 mx-auto w-full lg:w-3/5">
+      <div className="text-5xl font-bold text-center mt-5 align-middle justify-center">{project.title}</div>
       <div className="text-2xl font-bold text-gray-400 text-center mt-5">{project.date}</div>
-      <div className="container flex flex-col mt-5 md:flex-row">
-        {/* 표시 */}
+      <div className="container flex flex-col mt-5 md:flex-col">
         <div className="md:w-full md:order-1 bg-gray-300 p-8 mb-5 md:mb-0">
           <div className="border-black border-2">
             <ImageSlider images={project.images} />
           </div>
         </div>
-        {/* 표시 */}
+
         <div className="md:w-full md:order-2 bg-gray-300 p-8">
-          <p className="text-lg font-bold my-4" id="info">
+          <p className="text-xl font-bold my-4" id="info" style={{ whiteSpace: 'pre-line' }}>
             {project.description}
           </p>
 
           <div className="border-b border-gray-500 my-3"></div>
 
+          {project.features ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  주요기능
+                  <ul className="list-disc pl-4 ml-7">
+                    {project.features?.map((feature: any, index: number) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
+          {/* 사용 기술 */}
+          {project.skills ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  사용 기술:
+                  <ul className="list-disc pl-4 ml-7">
+                    {project.skills?.map((skills, index) => (
+                      <li key={index}>{skills}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
+          {/* 기술 스택 */}
           <ul className="list-disc m-3">
             <li className="text-lg flex my-4 font-bold">
               <div className="container flex mx-auto mt-4">
                 <AiOutlineCheck />
-                주요기능
+                기술 스택:
                 <ul className="list-disc pl-4 ml-7">
-                  {project.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
+                  <li>{project.tech}</li>
                 </ul>
               </div>
             </li>
           </ul>
+          {/* 맡은 일 */}
+          {project.tasks ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  맡은 일
+                  <ul className="list-disc pl-4 ml-7">
+                    {project.tasks?.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
+
+          {/* 배포링크 */}
+          <ul className="list-disc m-3">
+            <li className="text-lg flex my-4 font-bold">
+              <div className="container flex mx-auto mt-4">
+                <AiOutlineCheck />
+                배포 링크
+                <ul className="list-disc pl-4 ml-3">
+                  <a
+                    className="hover:cursor-pointer underline text-blue-600"
+                    href={project.deploymentLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.deploymentLink}
+                  </a>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          {/* Github 링크 */}
+          <ul className="list-disc m-3">
+            <li className="text-lg flex my-4 font-bold">
+              <div className="container flex mx-auto mt-4">
+                <AiOutlineCheck />
+                github 링크
+                <ul className="list-disc pl-4 ml-3">
+                  <a
+                    className="hover:cursor-pointer underline text-blue-600"
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.githubLink}
+                  </a>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          {project.plans ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  추가 기능 계획
+                  <ul className="list-disc pl-4 ml-7">
+                    {project.plans?.map((plan, index) => (
+                      <li key={index}>{plan}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
         </div>
       </div>
     </div>
@@ -61,9 +149,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const Projects = ({ projects }: Props) => {
   return (
-    <article id="projects" className="w-full py-10 bg-blue-300">
+    <article id="projects" className="w-full py-10 bg-blue-300 flex flex-col">
       <ArticleHeader name={'projects'} />
-      <section className="flex flex-wrap justify-center items-center">
+      <section className="flex flex-col justify-center items-center">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

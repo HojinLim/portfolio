@@ -15,11 +15,12 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 1
         }
       },
       {
@@ -33,13 +34,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 
   return (
     <div className="relative mt-8">
-      <Slider {...settings} className="mx-auto max-w-2xl p-2 py-6">
-        {images.map((image, index) => (
-          <div key={index} className="focus:outline-none">
-            <img src={image} alt={`Slide ${index + 1}`} className="w-full h-96 object-cover rounded-md" />
-          </div>
-        ))}
-      </Slider>
+
+        <Slider {...settings} className="mx-auto max-w-5xl p-2 py-6">
+          {images.map((image, index) => (
+            <div key={index} className="flex items-center justify-center focus:outline-none">
+              <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-contain rounded-md my-28" />
+            </div>
+          ))}
+        </Slider>
+
     </div>
   );
 };

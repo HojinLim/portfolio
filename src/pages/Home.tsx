@@ -8,7 +8,8 @@ import Archiving from '../components/Archiving';
 import Projects from '../components/Projects';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import MouseEffect from '../components/MouseEffect';
-import { projectsData } from '../static/const';
+import { projectsData } from '../static/variable';
+
 
 type Props = {};
 
