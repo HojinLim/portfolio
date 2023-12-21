@@ -37,7 +37,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
       <Slider {...settings} className="mx-auto max-w-4xl p-2 py-6">
         {images.map((image, index) => (
           <div key={index} className="flex items-center justify-center focus:outline-none">
-            <img src={image} alt={`Slide ${index + 1}`} className="object-contain rounded-md my-auto mx-auto" />
+            <img src={image} alt={`Slide ${index + 1}`} className="object-contain rounded-md my-auto mx-auto max-h-[600px]" />
           </div>
         ))}
       </Slider>
