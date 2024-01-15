@@ -134,7 +134,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.tistoryLink ? (
             <ul className="list-disc m-3">
               <li className="text-lg flex my-4 font-bold">
-                <div className="container flex mx-auto mt-4">
+                <div className="container flex mx-auto mt-4 overflow-hidden whitespace-no-wrap">
                   <AiOutlineCheck />
                   tistory
                   <ul className="list-disc pl-4 ml-3">
