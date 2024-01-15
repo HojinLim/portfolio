@@ -1,4 +1,5 @@
 import { Project } from './const/type';
+import { life_quotes_imgs } from './images/projects/RN_life_quotes/life_quotes_imgs';
 
 import { project3_imgs } from './images/projects/RN_shop/RN_shop_imgs';
 import { project1_imgs } from './images/projects/pyeon/pyeon_imgs';
@@ -32,8 +33,7 @@ export const projectsData: Project[] = [
     githubLink: 'https://github.com/CTDKSKM/hkmall',
     tech: 'TypeScript, Tail Wind css, Firebase, tanstack query, ',
     tasks: ['Firebase 상품 정보 Fetching', '반응형 디자인', '전반적 코드 관리'],
-    skills: ['React tanstack query 사용해 데이터 패칭', 'Firebase 유저 관리', 'Firebase Storage 사진 관리'],
-    plans: ['반응형 디자인 보완']
+    skills: ['React tanstack query 사용해 데이터 패칭', 'Firebase 유저 관리', 'Firebase Storage 사진 관리']
   },
   {
     title: 'HK Mall- (RN version)',
@@ -49,6 +49,25 @@ export const projectsData: Project[] = [
       'tanstack query 사용해 데이터 패칭',
       'Firebase 상품 정보 Fetching',
       'expo-camera 사진 촬영 및 업로드'
+    ]
+  },
+  {
+    title: 'Life Quotes',
+    date: '24.01.04 ~  24.01.12 (1주 / 2주)',
+    images: life_quotes_imgs,
+    description: `삶의 지혜가 담긴 명언을 볼 수 있는 앱입니다. \n기능은 적으나 처음으로 스토어 배포 테스트 통과 해 본 의미있는 단독 프로젝트입니다. `,
+    features: null,
+    githubLink: 'https://github.com/HojinLim/RN_life_quotes',
+    tistoryLink: 'https://hojin96.tistory.com/97',
+    tech: 'React Native, Redux-Persist, Redux Tool Kit, Async Storage, React Navigation',
+    skills: [
+      'Material Bottom Tab 구현',
+      'Redux persist 이용한 명언 데이터 전역 상태 관리 및 내부 DB저장 및 초기화',
+      '가로, 세로 반응형 디자인 구현 (useWindowDimensions Hook)',
+      '리액트 훅 활용한 성능 최적화 (useMemo)',
+      '즐겨찾기 기능',
+      `구글 스토어  내부 테스트 접근성 성능 개선 
+      \n (경고 22개의 문제 → 사소한 수준의 14개의 문제, 36.36% 개선)`
     ]
   }
 ];

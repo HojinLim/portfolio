@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleHeader from './ArticleHeader';
 import { AiOutlineCheck } from 'react-icons/ai';
 import ImageSlider from './ImageSlider';
@@ -42,6 +41,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
               </li>
             </ul>
           ) : null}
+          {/* 기술 스택 */}
+          <ul className="list-disc m-3">
+            <li className="text-lg flex my-4 font-bold">
+              <div className="container flex mx-auto mt-4">
+                <AiOutlineCheck />
+                기술 스택:
+                <ul className="list-disc pl-4 ml-7">
+                  <li>{project.tech}</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
           {/* 사용 기술 */}
           {project.skills ? (
             <ul className="list-disc m-3">
@@ -58,18 +69,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               </li>
             </ul>
           ) : null}
-          {/* 기술 스택 */}
-          <ul className="list-disc m-3">
-            <li className="text-lg flex my-4 font-bold">
-              <div className="container flex mx-auto mt-4">
-                <AiOutlineCheck />
-                기술 스택:
-                <ul className="list-disc pl-4 ml-7">
-                  <li>{project.tech}</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+
           {/* 맡은 일 */}
           {project.tasks ? (
             <ul className="list-disc m-3">
@@ -110,11 +110,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ) : null}
 
           {/* Github 링크 */}
+
           <ul className="list-disc m-3">
             <li className="text-lg flex my-4 font-bold">
               <div className="container flex mx-auto mt-4">
                 <AiOutlineCheck />
-                github 링크
+                github
                 <ul className="list-disc pl-4 ml-3">
                   <a
                     className="hover:cursor-pointer underline text-blue-600"
@@ -128,6 +129,29 @@ const ProjectCard = ({ project }: { project: Project }) => {
               </div>
             </li>
           </ul>
+
+          {/* tistory 링크 */}
+          {project.tistoryLink ? (
+            <ul className="list-disc m-3">
+              <li className="text-lg flex my-4 font-bold">
+                <div className="container flex mx-auto mt-4">
+                  <AiOutlineCheck />
+                  tistory
+                  <ul className="list-disc pl-4 ml-3">
+                    <a
+                      className="hover:cursor-pointer underline text-blue-600"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.tistoryLink}
+                    </a>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ) : null}
+
           {project.plans ? (
             <ul className="list-disc m-3">
               <li className="text-lg flex my-4 font-bold">

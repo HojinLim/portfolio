@@ -6,9 +6,10 @@ export interface Project {
   images: string[];
   deploymentLink?: string;
   githubLink: string;
+  tistoryLink?: string;
   tech: string;
-//   frontendTech: string;
-//   backendTech: string;
+  //   frontendTech: string;
+  //   backendTech: string;
   tasks?: string[];
   skills?: string[];
   plans?: string[];
