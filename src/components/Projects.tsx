@@ -113,7 +113,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           <ul className="list-disc m-3">
             <li className="text-lg flex my-4 font-bold">
-              <div className="container flex mx-auto mt-4">
+              <div className="container flex mx-auto mt-4 overflow-hidden whitespace-no-wrap">
                 <AiOutlineCheck />
                 github
                 <ul className="list-disc pl-4 ml-3">
