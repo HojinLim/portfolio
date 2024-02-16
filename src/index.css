@@ -198,3 +198,21 @@ code {
     border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
   }
 }
+
+/* 한줄씩 내려오는 애니메이션 */
+.animated-text {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
