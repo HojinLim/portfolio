@@ -30,16 +30,16 @@ const Archiving = () => {
             key={index}
             className="p-7 m-6 bg-white rounded-2xl shadow-lg hover:shadow-lg transition duration-300 ease-in-out transform hover:translate-y-1 w-3/4 sm:w-2/4 md:2/4 lg:w-1/4 overflow-hidden h-[470px]"
           >
-            <div className="text-lg container mx-auto p-4 pl-8 flex flex-col justify-between h-full">
+            <div className="container mx-auto p-4 pl-8 flex flex-col justify-between h-full">
               <img
-                className="w-full h-40 object-cover border-black border-2 rounded-md mb-4"
+                className="w-full h-40 object-fit border-black border-2 rounded-md mb-4"
                 src={box.imgUrl}
                 alt="github"
               />
               <div>
                 <a
                   href={box.link}
-                  className="text-lg text-blue-500 hover:underline"
+                  className="lg:text-sm sm:text-lg  text-blue-500 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

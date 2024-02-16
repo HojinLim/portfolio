@@ -37,7 +37,7 @@ const Header = (props: Props) => {
     headerStyle.backgroundColor = 'white';
     headerStyle.color = 'black';
   }
-
+  console.log(window.innerHeight);
   return (
     <header id="header" style={headerStyle} className="bg-transparent p-4 fixed top-0 left-0 w-full z-50">
       <nav className="container mx-auto flex items-center justify-between">
