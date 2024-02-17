@@ -13,9 +13,9 @@ const Skills = (props: Props) => {
   const skillContainers = [
     { value: 'Frontend', imgUrl: front },
     { value: 'Backend', imgUrl: back },
-    { value: 'Mobile App', imgUrl: mobile },
-    { value: 'Deployment', imgUrl: deployment },
-    { value: 'Version Control', imgUrl: version }
+    { value: 'Mobile App', imgUrl: mobile, height: '15rem' },
+    { value: 'Deployment', imgUrl: deployment, height: '20rem' },
+    { value: 'Version Control', imgUrl: version, height: '20rem' }
   ];
 
   return (
@@ -27,7 +27,7 @@ const Skills = (props: Props) => {
           <div
             key={index}
             className={`p-8 m-4 bg-white rounded-xl shadow-lg hover:shadow-lg transition duration-300 ease-in-out transform hover:translate-y-1 mx-auto`}
-            style={{ width: '15rem' }}
+            style={{ width: '15rem', height: item.height }}
           >
             <div className="mx-auto font-bold text-yellow-600 text-2xl mb-4">{item.value}</div>
             <div className="w-full h-1 bg-black"></div>
