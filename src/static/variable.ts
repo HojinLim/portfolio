@@ -1,4 +1,4 @@
-import { Project } from './const/type';
+import { Project } from './constants/type';
 import { life_quotes_imgs } from './images/projects/RN_life_quotes/life_quotes_imgs';
 
 import { project3_imgs } from './images/projects/RN_shop/RN_shop_imgs';

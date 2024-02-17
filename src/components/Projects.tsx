@@ -2,7 +2,7 @@ import ArticleHeader from './ArticleHeader';
 import { AiOutlineCheck } from 'react-icons/ai';
 import ImageSlider from './ImageSlider';
 
-import { Project } from '../static/const/type';
+import { Project } from '../static/constants/type';
 
 type Props = {
   projects: Project[];
