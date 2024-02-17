@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillGithub} from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { SiTistory } from 'react-icons/si';
 import { githubLink, tistoryLink } from '../static/variable';
 
@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto my-10 flex flex-col items-center justify-center">
         <div className="flex space-x-4 my-3">
           <a href={githubLink} target="_blank" rel="noopener noreferrer">
-            <AiFillGithub className="w-[50px] h-[50px] footerIcon mx-1" />
+            <AiFillGithub className="w-[50px] h-[50px] footerIcon mx-1 hover:opacity-20 hover:translate-y-0.5" />
           </a>
           <a href={tistoryLink} target="_blank" rel="noopener noreferrer">
-            <SiTistory className="w-[40px] h-[40px] footerIcon mt-2  mx-1" />
+            <SiTistory className="w-[40px] h-[40px] footerIcon mt-2  mx-1 hover:opacity-20 hover:translate-y-0.5" />
           </a>
 
           {/* 페이스북, 인스타 이미지 */}
