@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             <AiOutlineFacebook className="w-[60px] h-[60px] footerIcon " />
           </a> */}
         </div>
-        <p>© 2023. HK Mall. All rights reserved.</p>
+        <p>© 2024. Hojin Lim. All rights reserved.</p>
       </div>
     </footer>
   );
