@@ -200,10 +200,12 @@ code {
 }
 
 /* 한줄씩 내려오는 애니메이션 */
-.animated-text {
+.animated_text {
   display: inline-block;
   opacity: 0;
   animation: fadeInDown 0.5s ease forwards;
+  white-space: nowrap;
+  overflow:hidden;
 }
 
 @keyframes fadeInDown {
@@ -215,4 +217,9 @@ code {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 프로젝트 컨테이너 부분 */
+.project_container {
+  @apply container flex mx-auto mt-4
 }

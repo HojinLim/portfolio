@@ -26,7 +26,7 @@ const About = (props: Props) => {
 
   return (
     <article id="about-me" className="w-full py-10 bg-white">
-      <ArticleHeader name={'About-Me'} />
+      <ArticleHeader name='About-Me' />
 
       <section className="flex flex-wrap w-3/5 mx-auto">
         {information.map((info) => {

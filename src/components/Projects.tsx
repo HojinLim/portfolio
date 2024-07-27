@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.features ? (
             <ul className="list-disc m-3">
               <li className="text-lg flex my-4 font-bold">
-                <div className="container flex mx-auto mt-4">
+                <div className="project_container">
                   <AiOutlineCheck />
                   주요기능
                   <ul className="list-disc pl-4 ml-7">
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {/* 기술 스택 */}
           <ul className="list-disc m-3">
             <li className="text-lg flex my-4 font-bold">
-              <div className="container flex mx-auto mt-4">
+              <div className="project_container">
                 <AiOutlineCheck />
                 기술 스택:
                 <ul className="list-disc pl-4 ml-7">
@@ -57,7 +57,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.skills ? (
             <ul className="list-disc m-3">
               <li className="text-lg flex my-4 font-bold">
-                <div className="container flex mx-auto mt-4">
+                <div className="project_container">
                   <AiOutlineCheck />
                   사용 기술:
                   <ul className="list-disc pl-4 ml-7">
