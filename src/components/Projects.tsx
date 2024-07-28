@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.features ? (
             <ul className="list-disc m-3">
               <li className="text-lg flex my-4 font-bold">
-                <div className="project_container">
+                <div className="project_container max-[950px]:flex-col">
                   <span className="flex">
                     <AiOutlineCheck />
                     주요기능
