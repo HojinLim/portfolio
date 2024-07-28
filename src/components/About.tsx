@@ -1,18 +1,18 @@
-import React from 'react';
-import ArticleHeader from './ArticleHeader';
-import person from '../static/images/person.svg';
-import calender from '../static/images/calender.svg';
-import locator from '../static/images/locator.svg';
-import phoneCall from '../static/images/phone-call.svg';
-import mail from '../static/images/mail.svg';
-import pen from '../static/images/pen.svg';
+import React from 'react'
+import ArticleHeader from './ArticleHeader'
+import person from '../static/images/person.svg'
+import calender from '../static/images/calender.svg'
+import locator from '../static/images/locator.svg'
+import phoneCall from '../static/images/phone-call.svg'
+import mail from '../static/images/mail.svg'
+import pen from '../static/images/pen.svg'
 
-type Props = {};
+type Props = {}
 
 // .env 파일에서 환경변수 가져오기
-const address: string | undefined = process.env.REACT_APP_INFO_ADDRESS;
-const phone: string | undefined = process.env.REACT_APP_INFO_PHONE;
-const univ: string | undefined = process.env.REACT_APP_INFO_UNIV;
+const address: string | undefined = process.env.REACT_APP_INFO_ADDRESS
+const phone: string | undefined = process.env.REACT_APP_INFO_PHONE
+const univ: string | undefined = process.env.REACT_APP_INFO_UNIV
 
 const About = (props: Props) => {
   const information = [
@@ -22,11 +22,11 @@ const About = (props: Props) => {
     { title: '연락처', value: phone, icon: phoneCall },
     { title: '이메일', value: 'hojinim@gmail.com', icon: mail },
     { title: '학력', value: univ, icon: pen }
-  ];
+  ]
 
   return (
-    <article id="about-me" className="w-full py-10 bg-white">
-      <ArticleHeader name='About-Me' />
+    <article id="about" className="w-full py-10 bg-white">
+      <ArticleHeader name="About-Me" />
 
       <section className="flex flex-wrap w-3/5 mx-auto">
         {information.map((info) => {
@@ -42,11 +42,11 @@ const About = (props: Props) => {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
       </section>
     </article>
-  );
-};
+  )
+}
 
-export default About;
+export default About

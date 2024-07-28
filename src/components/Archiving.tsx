@@ -1,8 +1,8 @@
-import React from 'react';
-import ArticleHeader from './ArticleHeader';
-import github from '../static/images/github.png';
-import tistory from '../static/images/tistory.jpg';
-import { githubLink, tistoryLink } from '../static/variable';
+import React from 'react'
+import ArticleHeader from './ArticleHeader'
+import github from '../static/images/github.png'
+import tistory from '../static/images/tistory.jpg'
+import { githubLink, tistoryLink } from '../static/variable'
 
 const boxes = [
   {
@@ -18,12 +18,12 @@ const boxes = [
     bullets: ['배운 것을 나의 것으로 만들기 위한 기록', '웹 개발자의 길을 걸으며 공부한 웹 관련 지식 기록']
   }
   // 추가적인 박스 데이터를 원하는 만큼 추가할 수 있습니다.
-];
+]
 
 const Archiving = () => {
   return (
-    <article id="archiving" className="w-full py-10 bg-red-300">
-      <ArticleHeader name={'archiving'} />
+    <article id="archive" className="w-full py-10 bg-red-300">
+      <ArticleHeader name="archiving" />
       <section className="flex flex-wrap justify-center items-center">
         {boxes.map((box, index) => (
           <div
@@ -59,7 +59,7 @@ const Archiving = () => {
         ))}
       </section>
     </article>
-  );
-};
+  )
+}
 
-export default Archiving;
+export default Archiving

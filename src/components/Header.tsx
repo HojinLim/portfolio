@@ -6,7 +6,12 @@ import { headerBtnShow } from 'src/atom/store'
 
 type Props = {}
 
-const navItem = ['About-Me', 'Skills', 'Archiving', 'Projects']
+const navItem = [
+  { id: 'about', title: 'About-Me' },
+  { id: 'skills', title: 'Skills' },
+  { id: 'archive', title: 'Archiving' },
+  { id: 'projects', title: 'Projects' }
+]
 
 const Header = (props: Props) => {
   const [showBackground, setShowBackground] = useState(false)
@@ -26,10 +31,8 @@ const Header = (props: Props) => {
     const width = window.innerWidth
     if (width <= 550) {
       setHeaderBtnShow(true)
-      console.log('Width is 550px or less:', width)
     } else {
       setHeaderBtnShow(false)
-      console.log('Width is greater than 550px:', width)
     }
   }
 
@@ -66,14 +69,14 @@ const Header = (props: Props) => {
 
         <ul className="flex space-x-4">
           {!headerButtonShow ? (
-            navItem.map((item) => {
+            navItem.map((item, key) => {
               return (
-                <li key={item}>
+                <li key={key}>
                   <button
-                    onClick={() => scrollToSection(`${item.toLowerCase()}`)}
+                    onClick={() => scrollToSection(`${item.id}`)}
                     className="hover:text-blue-400 hover:underline font-bold cursor-pointer"
                   >
-                    {item.replace('-', '')}
+                    {item.title.replace('-', '')}
                   </button>
                 </li>
               )

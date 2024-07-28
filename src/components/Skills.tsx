@@ -1,13 +1,12 @@
-import React from 'react';
-import ArticleHeader from './ArticleHeader';
-import front from '../static/images/skills/front.png';
-import back from '../static/images/skills/back.png';
-import deployment from '../static/images/skills/deploy.png';
-import communication from '../static/images/skills/com.png';
-import mobile from '../static/images/skills/mobile.png';
-import version from '../static/images/skills/version.png';
+import React from 'react'
+import ArticleHeader from './ArticleHeader'
+import front from '../static/images/skills/front.png'
+import back from '../static/images/skills/back.png'
+import deployment from '../static/images/skills/deploy.png'
+import mobile from '../static/images/skills/mobile.png'
+import version from '../static/images/skills/version.png'
 
-type Props = {};
+type Props = {}
 
 const Skills = (props: Props) => {
   const skillContainers = [
@@ -16,7 +15,7 @@ const Skills = (props: Props) => {
     { value: 'Mobile App', imgUrl: mobile, height: '15rem' },
     { value: 'Deployment', imgUrl: deployment, height: '20rem' },
     { value: 'Version Control', imgUrl: version, height: '20rem' }
-  ];
+  ]
 
   return (
     <article id="skills" className="w-full py-10 bg-pink-300">
@@ -36,7 +35,7 @@ const Skills = (props: Props) => {
         ))}
       </section>
     </article>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills

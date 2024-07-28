@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { scrollToSection, scrollToTop } from '../utils/scrollUtils'
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,24 +33,24 @@ const HamburgerMenu = () => {
           >
             <ul>
               <li className="mb-2">
-                <a href="#" className="text-gray-800 hover:text-gray-600">
-                  Home
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className="text-gray-800 hover:text-gray-600">
+                <button onClick={() => scrollToSection('about')} className="text-gray-800 hover:text-gray-600">
                   About
-                </a>
+                </button>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-800 hover:text-gray-600">
-                  Services
-                </a>
+                <button onClick={() => scrollToSection('skills')} className="text-gray-800 hover:text-gray-600">
+                  Skills
+                </button>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-800 hover:text-gray-600">
-                  Contact
-                </a>
+                <button onClick={() => scrollToSection('archive')} className="text-gray-800 hover:text-gray-600">
+                  Archiving
+                </button>
+              </li>
+              <li className="mb-2">
+                <button onClick={() => scrollToSection('projects')} className="text-gray-800 hover:text-gray-600">
+                  Projects
+                </button>
               </li>
             </ul>
           </nav>
