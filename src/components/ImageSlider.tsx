@@ -1,11 +1,11 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React from 'react'
+import Slider from 'react-slick'
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 interface ImageSliderProps {
-  images: string[];
+  images: string[]
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
@@ -30,19 +30,23 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
         }
       }
     ]
-  };
+  }
 
   return (
-    <div className="relative mt-8">
-      <Slider {...settings} className="mx-auto max-w-4xl p-2 py-6">
+    <div className="relative slider_container">
+      <Slider {...settings} className="mx-auto max-w-4xl p-2 py-6 flex items-center">
         {images.map((image, index) => (
           <div key={index} className="flex items-center justify-center focus:outline-none">
-            <img src={image} alt={`Slide ${index + 1}`} className="object-contain rounded-md my-auto mx-auto max-h-[600px]" />
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="object-contain rounded-md my-auto mx-auto max-h-[600px]"
+            />
           </div>
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
-export default ImageSlider;
+export default ImageSlider
