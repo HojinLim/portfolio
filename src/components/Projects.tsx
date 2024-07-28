@@ -68,7 +68,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     <AiOutlineCheck />
                     사용 기술:
                   </span>
-                  <ul className="list-disc pl-4 ml-7 overflow-hidden text-ellipsis">
+                  <ul className="list-disc pl-4 ml-7  text-ellipsis">
                     {project.skills?.map((skills, index) => (
                       <li key={index}>{skills}</li>
                     ))}
@@ -106,7 +106,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     <AiOutlineCheck />
                     배포 링크
                   </span>
-                  <ul className="list-disc pl-4 ml-3 overflow-hidden text-ellipsis whitespace-nowrap">
+                  <ul className="list-disc pl-4 ml-3 overflow-hidden  text-ellipsis whitespace-nowrap">
                     <a
                       className="hover:cursor-pointer underline text-blue-600 sm:si "
                       href={project.deploymentLink}
