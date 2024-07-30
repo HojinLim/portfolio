@@ -233,3 +233,17 @@ code {
     overflow: hidden;
   }
 }
+
+.hamburger {
+  max-height: 0; /* Start with max-height 0 */
+  transition: max-height 0.3s ease !important;
+  -webkit-transition: max-height 0.5s ease !important; /* For older WebKit browsers */
+  overflow: hidden !important; /* Ensure content outside the max-height is hidden */
+  visibility: hidden;
+  display: block;
+}
+
+.hamburger.open {
+  max-height: 15.75rem; /* Expand to the desired max-height */
+  visibility: visible;
+}
