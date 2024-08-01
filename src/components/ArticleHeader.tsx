@@ -25,7 +25,7 @@ const ArticleHeader = ({ name }: Props) => {
         />
       </div>
 
-      <div style={{ fontWeight: 900 }} className="text-5xl font-bold underline">
+      <div style={{ fontWeight: 900 }} className="text-5xl font-bold border-b border-gray-500 pb-3">
         {name.toUpperCase()}
       </div>
     </header>

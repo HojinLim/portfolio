@@ -49,7 +49,6 @@ const Header = (props: Props) => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleResize)
-    window.addEventListener('handleTop', handleTop)
 
     // Initial check for viewport width
     handleResize()
@@ -58,14 +57,8 @@ const Header = (props: Props) => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
-      window.removeEventListener('handleTop', handleTop)
     }
   }, [])
-  useMemo(() => {
-    if (window.pageYOffset <= 0) {
-      setIsOpen(false)
-    }
-  }, [window.pageYOffset])
 
   const headerStyle: CSSProperties = {
     color: 'white',
@@ -92,7 +85,8 @@ const Header = (props: Props) => {
           <>
             <div className="w-8 h-8 flex flex-col justify-between items-center gap-5">
               {isOpen ? (
-                <div className="h-full w-full text-gray-600" onClick={toggleMenu}>
+                // 취소버튼
+                <div className="cursor-pointer h-full w-full text-gray-600" onClick={toggleMenu}>
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -101,16 +95,17 @@ const Header = (props: Props) => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
+                    <line x1="18" y1="6" x2="6" y2="18" className="animate-pulse" />
+                    <line x1="6" y1="6" x2="18" y2="18" className="animate-pulse" />
                   </svg>
                 </div>
               ) : (
+                // 햄버거 버튼
                 <div
-                  className="cursor-pointer w- h-full flex flex-col justify-between items-center"
+                  className="cursor-pointer h-full w-full flex flex-col justify-between items-center"
                   onClick={toggleMenu}
                 >
-                  <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                  <span className="bg-gray-600 block h-0.5 w-8 animate-pulse "></span>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                   <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                 </div>
@@ -135,28 +130,32 @@ const Header = (props: Props) => {
       </nav>
 
       {/* 메뉴판 */}
-      <nav
-        style={headerStyle}
-        className={`hamburger w-full absolute pl-5 py-3 mr-12 me-12 bg-black shadow-lg  ${isOpen ? 'open' : ''}`}
-      >
-        <ul>
-          <li className="mb-2">
-            <button onClick={() => scrollToSection('about')}>About</button>
-          </li>
-          <li className="mb-2">
-            <button onClick={() => scrollToSection('skills')}>Skills</button>
-          </li>
-          <li className="mb-2">
-            <button onClick={() => scrollToSection('archive')}>Archiving</button>
-          </li>
-          <li className="mb-2">
-            <button onClick={() => scrollToSection('projects')}>Projects</button>
-          </li>
-          <li className="mb-2">
-            <button onClick={() => scrollToSection('career')}>Career</button>
-          </li>
-        </ul>
-      </nav>
+      {headerButtonShow && (
+        <nav
+          style={headerStyle}
+          className={`hamburger w-full bg-transparent absolute pl-5  mr-12 me-12 bg-black shadow-lg ${
+            isOpen ? 'open' : ''
+          }`}
+        >
+          <ul className="header_menu_list">
+            <li>
+              <button onClick={() => scrollToSection('about')}>About</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('skills')}>Skills</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('archive')}>Archiving</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('projects')}>Projects</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('career')}>Career</button>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }
