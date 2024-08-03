@@ -68,13 +68,16 @@ const Header = (props: Props) => {
   if (showBackground) {
     headerStyle.backgroundColor = 'white'
     headerStyle.color = 'black'
+  } else {
+    headerStyle.backgroundColor = 'black'
+    headerStyle.color = 'white'
   }
   const toggleMenu = () => {
     setIsOpen((prev) => !prev)
   }
 
   return (
-    <header id="header" style={headerStyle} className="bg-transparent fixed top-0 left-0 w-full z-50">
+    <header id="header" style={headerStyle} className="fixed top-0 left-0 w-full z-50">
       <nav className="w-full mx-auto flex items-center justify-between p-3">
         <div className="text-2xl font-bold whitespace-nowrap">
           <button onClick={scrollToTop}>My Portfolio</button>
@@ -131,30 +134,26 @@ const Header = (props: Props) => {
 
       {/* 메뉴판 */}
       {headerButtonShow && (
-        <nav
+        <ul
           style={headerStyle}
-          className={`hamburger w-full bg-transparent absolute pl-5  mr-12 me-12 bg-black shadow-lg ${
-            isOpen ? 'open' : ''
-          }`}
+          className={`hamburger w-full  pl-5  mr-12 me-12 bg-black shadow-lg ${isOpen ? 'open' : ''}`}
         >
-          <ul className="header_menu_list">
-            <li>
-              <button onClick={() => scrollToSection('about')}>About</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection('skills')}>Skills</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection('archive')}>Archiving</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection('projects')}>Projects</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection('career')}>Career</button>
-            </li>
-          </ul>
-        </nav>
+          <li>
+            <button onClick={() => scrollToSection('about')}>About</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('skills')}>Skills</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('archive')}>Archiving</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('projects')}>Projects</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('career')}>Career</button>
+          </li>
+        </ul>
       )}
     </header>
   )
