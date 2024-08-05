@@ -25,7 +25,7 @@ const Skills = (props: Props) => {
         {skillContainers.map((item, index) => (
           <div
             key={index}
-            className={`p-8 m-4 bg-white rounded-xl shadow-lg hover:shadow-lg transition duration-300 ease-in-out transform hover:translate-y-1 mx-auto`}
+            className={`p-8 m-4 bg-white rounded-xl shadow-lg hover:shadow-lg transition duration-300 common_card_effect ease-in-out transform hover:translate-y-1 mx-auto`}
             style={{ width: '15rem', height: item.height }}
           >
             <div className="mx-auto font-bold text-yellow-600 text-2xl mb-4">{item.value}</div>
@@ -37,5 +37,4 @@ const Skills = (props: Props) => {
     </article>
   )
 }
-
 export default Skills

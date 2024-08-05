@@ -3,13 +3,14 @@ import Header from '../components/Header'
 import Intro from '../components/Intro'
 import Footer from '../components/Footer'
 import About from '../components/About'
-import Skills from '../components/Skills'
+
 import Archiving from '../components/Archiving'
 import Projects from '../components/Projects'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 import MouseEffect from '../components/MouseEffect'
 import { projectsData } from '../static/variable'
 import { Career } from '../components/section/Career'
+import Skills from '../components/Skills'
 
 type Props = {}
 
@@ -61,7 +62,7 @@ const Home = (props: Props) => {
 
         <ScrollToTopButton />
         <Footer />
-        {mouseEffects &&
+        {/* {mouseEffects &&
           mouseEffects.map((effect) => {
             return (
               <React.Fragment key={effect.id}>
@@ -74,7 +75,7 @@ const Home = (props: Props) => {
                 />
               </React.Fragment>
             )
-          })}
+          })} */}
       </div>
     </>
   )

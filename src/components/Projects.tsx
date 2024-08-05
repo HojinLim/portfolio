@@ -15,7 +15,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         {project.title}
       </div>
       <div className="text-2xl font-bold text-gray-400 text-center mt-5 max-[560px]:text-lg">{project.date}</div>
-      <div className="container flex flex-col mt-5 md:flex-col">
+      <div className="container flex flex-col mt-5 md:flex-col m-auto w-full">
         {/* 슬라이더 */}
         <div className="md:w-full md:order-1 bg-gray-300 p-8 mb-5 md:mb-0 align-middle border-black border-2">
           <ImageSlider images={project.images} />

@@ -9,7 +9,7 @@ type Props = {}
 const navItem = [
   { id: 'about', title: 'About-Me' },
   { id: 'skills', title: 'Skills' },
-  { id: 'archive', title: 'Archiving' },
+  { id: 'archiving', title: 'Archiving' },
   { id: 'projects', title: 'Projects' },
   { id: 'career', title: 'Career' }
 ]
@@ -30,17 +30,19 @@ const Header = (props: Props) => {
     }
   }
 
+  /**
+   * 화면 너비가 500px 미만이면 햄버거 버튼 띄우기
+   */
   const handleResize = () => {
     const width = window.innerWidth
     if (width <= 550) {
       setHeaderBtnShow(true)
     } else {
       setHeaderBtnShow(false)
+      if (isOpen) setIsOpen(false)
     }
   }
   const handleTop = () => {
-    console.log(window.pageYOffset)
-
     if (window.pageYOffset <= 5) {
       setIsOpen(false)
     }
@@ -145,7 +147,7 @@ const Header = (props: Props) => {
             <button onClick={() => scrollToSection('skills')}>Skills</button>
           </li>
           <li>
-            <button onClick={() => scrollToSection('archive')}>Archiving</button>
+            <button onClick={() => scrollToSection('archiving')}>Archiving</button>
           </li>
           <li>
             <button onClick={() => scrollToSection('projects')}>Projects</button>
